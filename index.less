@@ -1,0 +1,53 @@
+@size:40px;
+@top: 70px;
+@left: 40px;
+@h: sqrt(pow(@top, 2) + pow(@left, 2)) - @size;
+@ty: (@h - @size)/2 + @top/2;
+
+.node {
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid #999;
+  text-align: center;
+  width: @size;
+  height: @size;
+  top: @top;
+
+  border-radius: @size/2;
+  
+  &:after {
+    font-size: @size/2;
+    font-family: Arial;
+    line-height: @size;
+    color: #555;
+    content: attr(data-name);
+  }
+  
+  .node:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: @h;
+    background-color: #999;
+    
+    left: 0px;
+    top: 0px;
+  }
+  
+  .node:last-child {
+    left: @left;
+    &:before {
+      transform: translate(@size/2 - @left/2 - 2px, -@ty - 2px) rotate(atan(@top/@left)- pi()/2);
+    }
+  }
+  
+  .node:first-child {
+    left: -@left;
+    &:before {
+      transform: translate(@left/2 + @size/2, -@ty) rotate(pi()/2 - atan(@top/@left));
+    }
+  }
+}
+
+.R { left: 200px; top: 100px}

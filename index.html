@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="index.less" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+  <meta charset="utf-8">
+  <title>React Virtual DOM Diff</title>
+</head>
+<body>
+  <button onclick="render('shape1')">Shape 1</button>
+  <button onclick="render('shape2')">Shape 2</button>
+  <button onclick="render('shape3')">Shape 3</button>
+  <button onclick="render('shape4')">Shape 4</button>
+  <button onclick="render('shape5')">Shape 5</button>
+  <button onclick="render('shape6')">Shape 6</button>
+  <button onclick="render('none')">Clear</button>
+  <a href="https://github.com/supnate/react-dom-diff" style="margin-left: 20px; font-size: 12px; color: red;">Fork me</a>
+  <div id="react-root"></div>
+  <script type="text/babel" src="index.jsx"></script>
+</body>
+</html>
